@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors Part 2
+  </title>
+</head>
+
+<body>
+
+  <div id="game">
+
+  </div>
+
+  <script type="text/javascript">
+
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var elem = document.getElementById('game')
+    console.log(elem)
+    var computerChoices = ["r", "p", "s"];
+    document.onkeyup = function(event) {
+      var userGuess = event.key;
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+      elem.innerHTML= ("<h1> User guess: " + userGuess +"</h1>");
+      elem.innerHTML = ("Computer guess: " + computerGuess);
+      if (event.key === computerGuess) {
+        elem.innerHTML("Tie")
+      } else if (event.key==="r" && computerGuess==="p")
+      {
+        elem.innerHTML("You Lose")
+      } else if (event.key==="r" && computerGuess==="s"){
+        elem.innerHTML("You Win")
+      }  else if (event.key==="p" && computerGuess==="s"){
+        elem.innerHTML("You Lose")
+      }  else if (event.key==="p" && computerGuess==="s"){
+        elem.innerHTML("You Win")
+      }  else if (event.key==="s" && computerGuess==="p"){
+        elem.innerHTML("You Win")
+      }  else if (event.key==="s" && computerGuess==="r"){
+        elem.innerHTML("You Lose") } 
+    };
+  </script>
+
+</body>
+
+</html>
